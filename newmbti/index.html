@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나와 맞는 학과는?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
+        integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" tyle="text/css" href="css/reset.css">
+    <link rel="stylesheet" tyle="text/css" href="css/style.css">
+    <link rel="shortcut icon" href="사자대가리.png" type="image/x-icon">
+
+</head>
+
+<body class="container">
+    <br><br><br>
+    <article id="main" class="start">
+        <h1 class="mt-5 text-center">🦁 나에게 맞는 학과 찾기 테스트 🦁</h1><p></p>
+        <img id="logo_img" width : 800px; src="main.jpg" alt="animal">
+        <!-- <section id="main_contents"> -->
+            <center>
+            <div class="wrapper">
+                <div class="intro">
+                    <h1>나에게 맞는 학과는?</h1>
+                    <div class="type">
+                        <ul class="type_list">
+                            <li>아동학과</li>
+                            <li>안경공학과</li>
+                            <li>방사선학과</li>
+                            <li>빅데이터의료융합학과</li>
+                            <li>보건환경안전학과학과</li>
+                            <li>치위생학과</li>
+                            <li>응급구조학과</li>
+                            <li>간호학과</li>
+                            <li>의료공학과</li>
+                            <li>의료경영학과</li>
+                            <li>의료홍보디자인학과</li>
+                            <li>임상병리학과</li>
+                            <li>의료IT학과</li>
+                            <li>의예과</li>
+                            <li>장례지도학과</li>
+                            <li>중독재활복지학과</li>
+                            <li>미용화장품과학과</li>
+                            <li>물리치료학과</li>
+                            <li>식품산업외식학과</li>
+                            <li>식품산업외식학과</li>
+                            <li>식품영양학과</li>
+                            <li>스포츠아웃도어학과</li>
+                            <li>유아교육학과</li>
+                        </ul>
+                    </div>
+                </div>
+            </center>
+        <!-- </section> -->
+        <button type="button" class="btn btn-warning btn-lg" onclick="start();"><span
+            style="font-weight: bold; font-size: 2em;">테스트 시작하기</span></button>
+        <br>
+        </h5>
+        <br><br>
+    </article>
+    
+    <br><br><br>
+    <article id="main" class="question">
+        <h3 id="number"class="text-center mt-5"> 번호</h3>
+        <div class="progress mt-5">
+            <div class="progress-bar" role="progressbar" style="width: calc(100/12*1%)"></div>
+        </div>
+        <h1 id="title" class="text-center mt-5">문제</h1>
+        <br><br><br>
+        <input id="type" type="hidden" value="EI">
+        <button id="A" type="button" class="btn btn-warning btn-lg" button style="font-size:30px; font-weight: bold; ">Primary</button>
+        <br>
+        <button id="B" type="button" class="btn btn-warning btn-lg" button style="font-size:30px; font-weight: bold; ">Primary</button>
+        <br><br><br><br><br>
+    </article>
+
+    <article id="main3" class="result">
+        <div class="text-center">
+            <br><br><br><br><br><br><br><br>
+            <button id="c" type="button" class="btn btn-warning btn-lg" onclick="end();"><h1>적합 학과 확인하기</h1></button>
+            <br><br><br><br><br><br><br><br>
+        </div>
+    </article>
+
+    <article id="main4" class="happy">
+        <h1 class="text-center mt-5"><span
+            style="font-size: 1.7em;">이런 학과를 추천해요!</span></h1>
+        <div id="slideShow">
+            <ul style="height: 400px;" class="slides">
+              <li><img id="img2" class="text-center mt-5" src="adong.jpg" alt="hakgwa" style="height: 370px; width: 690px;"></li>
+              <li><img id="img3" class="text-center mt-5" src="adong.jpg" alt="hakgwa" style="height: 370px; width: 690px;"></li>
+              <li><img id="img4" class="text-center mt-5" src="adong.jpg" alt="hakgwa" style="height: 370px; width: 690px;"></li>
+            </ul>  
+            <p class="controller">
+              <!-- &lang: 왼쪽 방향 화살표
+              &rang: 오른쪽 방향 화살표 -->
+              <span class="prev" style="font-size: 3em; font-weight: bold; ">&lang;</span>  
+              <span class="next" style="font-size: 3em; font-weight: bold; ">&rang;</span>
+            </p>
+    </article>
+
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+        crossorigin="anonymous"></script>
+
+    <script>
+        var num = 1;
+        var q = {
+            1: {"number":"1/12", "title": "첫 교양 수업을 들으러 갔는데 어떤 학생이 말을 건다.", "type": "EI", "A": "자기소개하며 말을 계속 건다.", "B": "앗 안녕하세요..ㅎㅎ oo학과에요. 간단하게 대답만 한다." },
+            2: {"number":"2/12", "title": "저 멀리서 같은 과 친구가 걸어온다!", "type": "EI", "A": "반가운 마음에 멀리 있어도 손을 흔들며 인사한다.", "B": "먼저 인사할 때까지 기다린다." },
+            3: {"number":"3/12", "title": "드디어 하게 된 자취! 집들이를 하려고 하는데, 어떤 친구들을 부를까?", "type": "EI", "A": "우리 과에 있는 친구들을 다 부르자! 친구의 친구도 불러!", "B": "소중한 내 친구들만 불러서 조용하고 진솔한 이야기를 밤새 해야지!" },
+            4: {"number":"4/12", "title": "혼자서 학교 캠퍼스를 걸어가고 있다.", "type": "SN", "A": "노래를 들으면서 아무 생각도 하지 않고 걷는다.", "B": "혼잣말을 하면서 오늘 뭐 할지 생각하면서 걷는다." },
+            5: {"number":"5/12", "title": "지루한 수업 시간, 난 어떤 생각을 하며 시간을 보낼까?", "type": "SN", "A": "이따 점심에 애들이랑 뭐 먹지? 학교 근처 맛집을 찾는다.", "B": "난 10년 뒤에 뭘 하고 있을까? 수업과 관련 없는 생각을 한다." },
+            6: {"number":"6/12", "title": "시험보기 전 날 공부하고 있다.", "type": "SN", "A": "공부를 더 하고 잘지, 일찍 잘 지 고민한다.", "B": "갑자기 전쟁 나서 시험 못 보면 어떡하지? 걱정한다." },
+            7: {"number":"7/12", "title": "친구가 내 성적표를 보더니 생각보다 잘 봤네?! 라고 말한다면", "type": "TF", "A": "우와 난 역시 똑똑한가?!! 기분좋다!", "B": "생각보다 잘한다고? 나 무시하는 건가?" },
+            8: {"number":"8/12", "title": "친구가 스트레스 받는다고 술이나 마시자고 한다.", "type": "TF", "A": " 어디 술집 갈래? 너가 골라", "B":"무슨 일 있어? 괜찮아?" },
+            9: {"number":"9/12", "title": "친구가 학교 오다가 사고가 났다고 한다!", "type": "TF", "A": "어디서? 뭐 때문에? 무슨 사고? ", "B": " 괜찮아? 다친 데는 없어ㅠㅠ?" },
+            10: {"number":"10/12", "title": "친구와 같이 시험공부를 한다.", "type": "JP", "A": "1시까지 수학 공부하고, 2시까지 영어 공부하자~", "B": "일단 수학을 시작해볼까?" },
+            11: {"number":"11/12", "title": "알바하는 도중 같이 일하는 친구가 손님과 싸운다.", "type": "JP", "A": "친구가 실수로 다른 상품을 드렸구나! 이건 친구 실수니까 내가 잘 중재해야겠다.", "B": "아 친구가 실수해서 손님과 싸우네. 시끄럽다." },
+            12: {"number":"12/12", "title": "교양과목을 수강 신청하려고 한다.", "type": "JP", "A": "강의평이 좋거나 다른 사람에게 추천받은 과목을 선택한다.", "B": "처음 봤을 때 배워보고 싶은 과목을 선택한다." }
+        }
+
+
+        var major1 = {
+            "ISTJ": { "일": "IT.jpg" },
+            "ISFJ": { "일": "adong.jpg" },
+            "INFJ": { "일": "mullichi.jpg" },
+            "INTJ": { "일": "IT.jpg" },
+            "ISTP": { "일": "bigdata.jpg" },
+            "ISFP": { "일": "chiwi.jpg" },
+            "INFP": { "일": "hongbo.jpg" },
+            "INTP": { "일": "bangsa.jpg" },
+            "ESTP": { "일": "sikyeong.jpg" },
+            "ESFP": { "일": "adong.jpg" },
+            "ENFP": { "일": "sikyeong.jpg" },
+            "ENTP": { "일": "bohwan.jpg" },
+            "ENFJ": { "일": "gyeongyeong.jpg" },
+            "ENTJ": { "일": "bigdata.jpg" },
+            "ESTJ": { "일": "iuye.jpg" },
+            "ESFJ": { "일": "ganho.jpg" }
+        }
+        var major2 = {
+            "ISTJ": { "이": "gonghak.jpg" },
+            "ISFJ": { "이": "yua.jpg" },
+            "INFJ": { "이": "jungdok.jpg" },
+            "INTJ": { "이": "bigdata.jpg" },
+            "ISTP": { "이": "IT.jpg" },
+            "ISFP": { "이": "jangji.jpg" },
+            "INFP": { "이": "bohwan.jpg" },
+            "INTP": { "이": "gonghak.jpg" },
+            "ESTP": { "이": "sport.jpg" },
+            "ESFP": { "이": "yua.jpg" },
+            "ENFP": { "이": "hongbo.jpg" },
+            "ENTP": { "이": "siksan.jpg" },
+            "ENFJ": { "이": "eunggeup.jpg" },
+            "ENTJ": { "이": "gyeongyeong.jpg" },
+            "ESTJ": { "이": "gyeongyeong.jpg" },
+            "ESFJ": { "이": "sport.jpg" }
+        }
+        var major3 = {
+            "ISTJ": { "삼": "jungdok.jpg" },
+            "ISFJ": { "삼": "iuye.jpg" },
+            "INFJ": { "삼": "chiwi.jpg" },
+            "INTJ": { "삼": "imsang.jpg" },
+            "ISTP": { "삼": "imsang.jpg" },
+            "ISFP": { "삼": "ganho.jpg" },
+            "INFP": { "삼": "jangji.jpg" },
+            "INTP": { "삼": "angyeong.jpg" },
+            "ESTP": { "삼": "eunggeup.jpg" },
+            "ESFP": { "삼": "hongbo.jpg" },
+            "ENFP": { "삼": "miyong.jpg" },
+            "ENTP": { "삼": "miyong.jpg" },
+            "ENFJ": { "삼": "siksan.jpg" },
+            "ENTJ": { "삼": "eunggeup.jpg" },
+            "ESTJ": { "삼": "siksan.jpg" },
+            "ESFJ": { "삼": "mullichi.jpg" }
+        }
+
+        function start() {
+            $(".start").hide();
+            $(".question").show();
+            next();
+        }
+        $("#A").click(function () {
+            var type = $("#type").val();
+            var preValue = $("#" + type).val();
+            $("#" + type).val(parseInt(preValue) + 1);
+            next();
+        });
+        $("#B").click(function () {
+            next();
+        });
+        function next() {
+            if (num == 13) {
+                $(".question").hide();
+                $(".result").show();
+                var mbti = "";
+                ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
+                ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
+                ($("#TF").val() < 2) ? mbti += "F" : mbti += "T";
+                ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
+                //alert(mbti);//
+                $("#img").attr("src", result[mbti]["img"]);
+                $("#animal").html(result[mbti]["animal"]);
+
+            }
+            else {
+                $(".progress-bar").attr("style", "width : calc(100/12*" + num + "%)");
+                $("#number").html(q[num]["number"]);
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+                num++;
+            }
+        }
+        var count;
+        function end() {
+            var mbti = "";
+            ($("#EI").val() < 2) ? mbti += "I" : mbti += "E";
+            ($("#SN").val() < 2) ? mbti += "N" : mbti += "S";
+            ($("#TF").val() < 2) ? mbti += "F" : mbti += "T";
+            ($("#JP").val() < 2) ? mbti += "P" : mbti += "J";
+            
+            $(".result").hide();
+            $(".happy").show();
+
+            $("#img2").attr("src", major1[mbti]["일"]);
+            $("#img3").attr("src", major2[mbti]["이"]);
+            $("#img4").attr("src", major3[mbti]["삼"]);
+
+            A();
+        }
+
+        function A(){
+            const slides = document.querySelector('.slides'); //전체 슬라이드 컨테이너
+            const slideImg = document.querySelectorAll('.slides li'); //모든 슬라이드들
+            let currentIdx = 0; //현재 슬라이드 index
+            const slideCount = slideImg.length; // 슬라이드 개수
+            const prev = document.querySelector('.prev'); //이전 버튼
+            const next = document.querySelector('.next'); //다음 버튼
+            const slideWidth = 650; //한개의 슬라이드 넓이
+            const slideMargin = 50; //슬라이드간의 margin 값
+
+//전체 슬라이드 컨테이너 넓이 설정
+            slides.style.width = (slideWidth + slideMargin) * slideCount + 'px';
+
+            function moveSlide(num) {
+            slides.style.left = -num * 700 + 'px';
+            currentIdx = num;
+            }
+
+            prev.addEventListener('click', function () {
+  /*첫 번째 슬라이드로 표시 됐을때는 
+  이전 버튼 눌러도 아무런 반응 없게 하기 위해 
+  currentIdx !==0일때만 moveSlide 함수 불러옴 */
+
+            if (currentIdx !== 0) moveSlide(currentIdx - 1);
+            });
+
+            next.addEventListener('click', function () {
+  /* 마지막 슬라이드로 표시 됐을때는 
+  다음 버튼 눌러도 아무런 반응 없게 하기 위해
+  currentIdx !==slideCount - 1 일때만 
+  moveSlide 함수 불러옴 */
+            if (currentIdx !== slideCount - 1) {
+            moveSlide(currentIdx + 1);
+            }
+            });
+
+            document.querySelector('ul.slides').style.width="2900px";
+        }
+
+
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</body>
+
+</html>

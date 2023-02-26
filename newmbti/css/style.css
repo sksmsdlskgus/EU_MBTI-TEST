@@ -1,0 +1,182 @@
+@font-face {
+    font-family: 'Gamja Flower', cursive;
+    src: url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Gamja Flower', cursive;
+    src: url('https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@keyframes rotate {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-20%);
+    }
+    50% {
+        transform: translateY(-40%);
+    }
+    75% {
+        transform: translateY(-60%);
+    }
+    100% {
+        transform: translateY(-80%);
+    }
+}
+
+html {
+    width : 100%;
+    height: 100%;
+}
+
+#main_contents {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
+   
+}
+
+#main_contents .wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    max-width: 500px;
+}
+
+.title {
+    text-align: center;
+    padding-bottom: 50px;
+}
+
+.main_title {
+    font-family: "GmarketSansBold";
+    font-size: 50px;
+    padding-bottom: 15px;
+}
+
+.sub_title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #7F47DD;
+}
+
+.intro {
+    text-align: center;
+    padding-bottom: 40px;
+}
+
+.intro h1 {
+    font-size: 50px;
+    text-align: center;
+    padding-left: 10px;
+    padding-bottom: 17px;
+}
+
+.type {
+    font-size: 25px;
+    line-height: 3em;
+    height: 3em;
+    overflow: hidden;
+    text-align: center;
+    padding-right: 40px;
+}
+
+.type_list{
+    animation : rotate 7s infinite;
+}
+
+#slideShow{
+  width: 800px;
+  height: 400px;
+  position: relative;
+  margin-top: 0px;
+  margin: 0 auto;
+  margin-bottom: 135px;
+  overflow: hidden;   
+    /*리스트 형식으로 이미지를 일렬로 
+    정렬할 것이기 때문에, 500px 밖으로 튀어 나간 이미지들은
+    hidden으로 숨겨줘야됨*/
+  }
+
+  
+  li{
+    list-style-type: none;
+    
+  }
+
+  
+.slides{
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    transition: left 0.5s ease-out; 
+    /*ease-out: 처음에는 느렸다가 점점 빨라짐*/
+  }
+  
+  /* 첫 번째 슬라이드 가운데에 정렬하기위해
+  첫번째 슬라이드만 margin-left조정 */
+  .slides li:first-child{
+    margin-left: 5px;
+  }
+  
+  /* 슬라이드들 옆으로 정렬 */
+  .slides li:not(:last-child){
+    float: left;
+    margin-right: 10px;
+    
+    
+  }
+  
+  .slides li{
+    float: left;
+    margin-top: 0%;
+    
+    height: 1000px;
+  }
+  
+  .controller span{
+    position:absolute;
+    background-color: transparent;
+    color: black;
+    text-align: center;
+    border-radius: 50%;
+    padding: 10px 20px;
+    top: 50%;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+  
+  /* 이전, 다음 화살표에 마우스 커서가 올라가 있을때 */
+  .controller span:hover{
+    background-color: rgba(128, 128, 128, 0.11);
+  }
+  
+  .prev{
+    left: 2px;
+    opacity: 0.3;
+  }
+  
+  /* 이전 화살표에 마우스 커서가 올라가 있을때 
+  이전 화살표가 살짝 왼쪽으로 이동하는 효과*/
+  .prev:hover{
+    transform: translateX(-10px);
+  }
+  
+  .next{
+    right: 2px;
+    opacity: 0.3;
+  }
+  
+  /* 다음 화살표에 마우스 커서가 올라가 있을때 
+  이전 화살표가 살짝 오른쪽으로 이동하는 효과*/
+  .next:hover{
+    transform: translateX(10px);
+  }
